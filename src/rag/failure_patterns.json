@@ -1,0 +1,28 @@
+[
+  {
+    "pattern_id": "DB_CONN_POOL_EXHAUSTION",
+    "name": "Database Connection Pool Exhaustion",
+    "description": "Application fails due to all database connections being in use",
+    "signals": [
+      "timeout acquiring connection",
+      "too many connections",
+      "connection pool exhausted"
+    ],
+    "root_cause": "Database connection pool size too small or leaked connections",
+    "infra_fix": "Increase DB pool size, enable connection leak detection",
+    "confidence_hint": 0.85
+  },
+  {
+    "pattern_id": "DOWNSTREAM_TIMEOUT",
+    "name": "Downstream Service Timeout",
+    "description": "Upstream service times out waiting for downstream dependency",
+    "signals": [
+      "request timed out",
+      "upstream timeout",
+      "dependency timeout"
+    ],
+    "root_cause": "Downstream latency spike or network degradation",
+    "infra_fix": "Add retries with backoff, tune timeout thresholds",
+    "confidence_hint": 0.78
+  }
+]
