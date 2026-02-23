@@ -15,7 +15,7 @@ class LocalVectorStore:
         self,
         query_embedding: np.ndarray,
         top_k: int = 3,
-        min_score: float = 0.6
+        min_score: float = 0.35
     ) -> List[Tuple[dict, float]]:
 
         results = []
